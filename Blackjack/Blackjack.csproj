@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Kaarten\" />
+    <Folder Include="Kaarten\Harten\" />
+    <Folder Include="Kaarten\Schoppen\" />
+    <Folder Include="Kaarten\Koeken\" />
+    <Folder Include="Kaarten\Klaver\" />
   </ItemGroup>
 
 </Project>

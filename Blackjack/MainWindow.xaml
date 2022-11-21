@@ -23,7 +23,7 @@
 
         <TextBlock TextAlignment="Center" Margin="30" Grid.Column="0" Text="SPELER "></TextBlock>
         <TextBlock TextAlignment="Center" Margin="30" Grid.Column="3" Text="BANK "></TextBlock>
-        <TextBox Name="txtSpelSpeler" Grid.Column="0" Grid.Row="1" Margin="20"></TextBox>
+        <TextBox Name="txtSpelSpeler" Grid.Column="0" Grid.Row="1" Margin="20" VerticalScrollBarVisibility="Visible"></TextBox>
         <TextBox Name="txtSpelBank" Grid.Column="3" Grid.Row="1" Margin="20"></TextBox>
         <Button  Click="btnDeel_Click" Name="btnDeel" Content="Deel" Grid.Column="1" Grid.ColumnSpan="2" Height="30" Width="100" ></Button>
         <Button  Click="btnHit_Click" Name="btnHit" Content="Hit" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Height="30" Width="100" ></Button>
