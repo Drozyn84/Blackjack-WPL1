@@ -1,0 +1,36 @@
+﻿<Window x:Class="Blackjack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Blackjack"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="green">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock TextAlignment="Center" Margin="30" Grid.Column="0" Text="SPELER "></TextBlock>
+        <TextBlock TextAlignment="Center" Margin="30" Grid.Column="3" Text="BANK "></TextBlock>
+        <TextBox Name="txtSpelSpeler" Grid.Column="0" Grid.Row="1" Margin="20"></TextBox>
+        <TextBox Name="txtSpelBank" Grid.Column="3" Grid.Row="1" Margin="20"></TextBox>
+        <Button  Click="btnDeel_Click" Name="btnDeel" Content="Deel" Grid.Column="1" Grid.ColumnSpan="2" Height="30" Width="100" ></Button>
+        <Button  Click="btnHit_Click" Name="btnHit" Content="Hit" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Height="30" Width="100" ></Button>
+        <Button  Click="btnStand_click" Name="btnStand" Content="Stand" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="30" Width="100" ></Button>
+        <TextBlock  Text="0" Margin="25" TextAlignment="Center" FontStyle="Oblique"  FontSize="25" Grid.Row="2" Grid.Column="0" Name="scoreSpeler"></TextBlock>
+        <TextBlock Text="0" Margin="25" TextAlignment="Center" FontStyle="Oblique" FontSize="25" Grid.Row="2" Grid.Column="3" Name="ScoreBank"></TextBlock>
+        <TextBlock></TextBlock>
+        
+    </Grid>
+</Window>
