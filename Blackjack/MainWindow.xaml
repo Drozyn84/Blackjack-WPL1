@@ -30,7 +30,7 @@
         <Button  Click="btnStand_click" Name="btnStand" Content="Stand" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="30" Width="100" ></Button>
         <TextBlock  Text="0" Margin="25" TextAlignment="Center" FontStyle="Oblique"  FontSize="25" Grid.Row="2" Grid.Column="0" Name="scoreSpeler"></TextBlock>
         <TextBlock Text="0" Margin="25" TextAlignment="Center" FontStyle="Oblique" FontSize="25" Grid.Row="2" Grid.Column="3" Name="ScoreBank"></TextBlock>
-        <TextBlock></TextBlock>
+        <TextBlock Text="" FontStyle="Oblique" TextAlignment="Center" FontSize="25" Grid.Row="3" Grid.Column="1" Margin="25" Name="TxtUitSlag"></TextBlock>
         
     </Grid>
 </Window>

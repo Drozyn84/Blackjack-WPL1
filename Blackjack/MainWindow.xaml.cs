@@ -13,21 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Blackjack
+namespace Blackjack  
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Random random = new Random();
+        private Random random2 = new Random();
         private Random random1 = new Random();
         private StringBuilder sb;
         private StringBuilder sb1;
-        private int willekeurigeKaart;
-        private int willekeurigeKaartBank;
-        private int volgBank;
-        private int volgSpel;
+        
+       
         public MainWindow()
         {
 
@@ -38,8 +36,10 @@ namespace Blackjack
 
             sb = new StringBuilder();
             sb1 = new StringBuilder();
+           
 
             
+          
             
 
 
@@ -49,71 +49,90 @@ namespace Blackjack
         private void btnStand_click(object sender, RoutedEventArgs e)
         {
 
+            btnHit.IsEnabled = false ;
+            btnDeel.IsEnabled = true;
 
 
+            
 
         }
 
 
-
-
+        
+       
         private void btnDeel_Click(object sender, RoutedEventArgs e)
 
         {
 
             btnHit.IsEnabled = true;
             btnStand.IsEnabled = true;
-            btnDeel.IsEnabled = false;
+            btnDeel.IsEnabled = true;
 
+            //SPELER RANDOM
 
+            Random Random2 = new Random();
 
-            Random random = new Random();
+            int willekeurigeKaart = random2.Next(1, 11);
+            if ( willekeurigeKaart < 2 )
+            {
+                willekeurigeKaart = 11;
+            }
+            int kaartTwee = random2.Next(1, 11);         
+          
+            
+            int opTelling = kaartTwee + willekeurigeKaart;
+            
+            
+            
+            sb.AppendLine($"{willekeurigeKaart}");          
+            sb.AppendLine($"{kaartTwee}");
+           
+            
 
-            willekeurigeKaart = random.Next(1, 7);
-
-
-
-            sb.AppendLine($"{willekeurigeKaart}");
             txtSpelSpeler.Text = sb.ToString();
-            scoreSpeler.Text = Convert.ToString(willekeurigeKaart);
+            scoreSpeler.Text = Convert.ToString(opTelling);
+
+            if (opTelling == 21 )
+            {
+                TxtUitSlag.Text = "gewonnen";
+            }
 
 
 
 
 
-            willekeurigeKaartBank = random.Next(1, 7);
+
+            //BANK RANDOM
+
+
+
+            int willekeurigeKaartBank = random2.Next(1, 11);
+            if (willekeurigeKaartBank < 2 )
+            {
+                willekeurigeKaartBank = 11;
+            }
+            int kaartTweeBank = random2.Next(1, 11);
+            int opTellingBank = kaartTweeBank + willekeurigeKaartBank;
 
 
             sb1.AppendLine($"{willekeurigeKaartBank}");
+            sb1.AppendLine($"{kaartTweeBank}");
+            
 
             txtSpelBank.Text = sb1.ToString();
-            ScoreBank.Text = Convert.ToString(willekeurigeKaartBank);
-
-            
+            ScoreBank.Text = Convert.ToString(opTellingBank);
 
 
 
 
+                       
         }
-
-
-
+        
+       
         private void btnHit_Click(object sender, RoutedEventArgs e)
         {
-            //het tweede cijfer + optelling bij het scorebord van Speler
-            Random random = new Random();   
-            int willeKaartSpeler = random.Next(1, 7);
-            
-            sb.AppendLine($"{willekeurigeKaart}");
-            txtSpelSpeler.Text = sb.ToString();
-            scoreSpeler.Text = Convert.ToString(willekeurigeKaart + willeKaartSpeler );
 
-            //het tweede cijfer + optelling bij het scorebord van Bank
-            int willeKaartBank = random1.Next(1, 7);
-
-            sb1.AppendLine($"{willekeurigeKaartBank}");
-            txtSpelBank.Text = sb.ToString();  
-            ScoreBank.Text = Convert.ToString( + willeKaartBank);
+            //TxtUitSlag.Text = Convert.ToString();
         }
     }
 }
